@@ -2,48 +2,70 @@
 
 ## Description
 
-This project builds a machine learning model to predict whether an employee will stay or leave the company.
+This project builds a machine learning model to predict whether an employee will leave the company (Attrition) or stay.
 
-The objective is to help HR understand the key factors that drive employee attrition.
+The objective is to help HR identify employees at risk of leaving and understand the key drivers behind attrition.
 
 ---
 
-## Model
+## Model Overview
 
 - Algorithm: Random Forest Classifier
-- Task: Binary Classification (Stay / Leave)
-- Accuracy: ~87%
+- Imbalance Handling: SMOTE (Synthetic Minority Oversampling)
+- Threshold Tuning: Optimized to improve precision / recall tradeoff
+- Evaluation Metrics: Accuracy, Precision, Recall, F1-score
 
 ---
 
-## Key Features Influencing Attrition
+## Key Improvements
 
+The dataset was highly imbalanced (fewer employees leave than stay).
+
+To improve model performance:
+
+- Applied SMOTE to balance the training dataset
+- Used stratified train/test split
+- Tuned prediction threshold to improve minority class performance
+- Evaluated using precision and recall instead of accuracy only
+
+---
+
+## Notebook Version
+
+A Jupyter Notebook version of the project is included:
+
+`employee_attrition_model.ipynb`
+
+The notebook contains:
+
+- Exploratory Data Analysis (EDA)
+- Class imbalance visualization
+- SMOTE application
+- Threshold tuning
+- Confusion matrix
+- Feature importance analysis
+- Final model evaluation
+
+---
+
+## How to Run (Notebook - Recommended)
+
+1. Open the notebook in Google Colab or Jupyter.
+2. Upload the dataset file:
+   `WA_Fn-UseC_-HR-Employee-Attrition.csv`
+3. Run all cells.
+
+---
+
+## Business Insight
+
+The model identifies important factors influencing employee attrition, including:
+
+- StockOptionLevel
 - MonthlyIncome
-- OverTime
+- JobSatisfaction
+- JobInvolvement
 - Age
-- TotalWorkingYears
-- DistanceFromHome
 - YearsAtCompany
 
-These features were identified using feature importance analysis.
-
----
-
-## How to Run
-
-1. Install dependencies:
-
-pip install -r requirements.txt
-
-
-2. Place the dataset file in the project folder:
-
-WA_Fn-UseC_-HR-Employee-Attrition.csv
-
-
-3. Run:
-
-python model.py
-
-
-The script will train the model and generate a feature importance plot.
+These insights can help HR teams design better retention strategies.
