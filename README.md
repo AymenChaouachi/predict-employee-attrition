@@ -48,7 +48,7 @@ The notebook contains:
 
 ---
 
-# How to Run just run the Jupyter file
+# How to Run (just run the Jupyter file)
 
 1. Open the notebook in Google Colab or Jupyter.
 2. Upload the dataset file:
@@ -69,4 +69,5 @@ The model identifies important factors influencing employee attrition, including
 - YearsAtCompany
 
 These insights can help HR teams design better retention strategies.
+
 
